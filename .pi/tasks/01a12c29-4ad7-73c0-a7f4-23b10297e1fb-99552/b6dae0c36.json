@@ -1,0 +1,28 @@
+{
+  "id": "b6dae0c36",
+  "name": "Watch ZMK CI build",
+  "command": "cd /bkp/Sources/zmk_lilly58_config && gh run watch 38163747003 --exit-status --interval 30 > /tmp/zmk-ci-watch.log 2>&1; rc=$?; gh run view 38163747003 >> /tmp/zmk-ci-watch.log 2>&1; exit $rc",
+  "status": "completed",
+  "outputPath": ".pi/tasks/01a12c29-4ad7-73c0-a7f4-23b10297e1fb-99552/b6dae0c36.output",
+  "cwd": "/bkp/Sources/zmk_lilly58_config",
+  "startTime": 1791743159645,
+  "endTime": 1791743415657,
+  "exitCode": 0,
+  "signal": null,
+  "pid": 111512,
+  "bytesWritten": 0,
+  "isAgent": false,
+  "surviveReload": false,
+  "notified": true,
+  "notifyOnCompletion": true,
+  "triggerOnCompletion": true,
+  "timeoutSeconds": 3000,
+  "shellPolicy": {
+    "policy": "inherit",
+    "executable": "/run/current-system/sw/bin/zsh",
+    "argvPrefix": [
+      "-c"
+    ],
+    "dialect": "posix"
+  }
+}

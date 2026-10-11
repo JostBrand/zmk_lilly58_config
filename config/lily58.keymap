@@ -94,6 +94,14 @@
             bindings = <&kp MINUS>;
             key-positions = <16 17>;
         };
+
+        // Press the 3 left thumb keys (dead ALT/GUI + key_repeat positions)
+        // together to unlock ZMK Studio. No hold-tap timing involved.
+        studio {
+            bindings = <&studio_unlock>;
+            key-positions = <50 51 52>;
+            timeout-ms = <100>;
+        };
     };
 
     behaviors {
