@@ -5,21 +5,27 @@
 # pass flags to the build command and `artifact-name` to assign a name to
 # distinguish build outputs from each other:
 #
-# board: [ "nice_nano_v2" ]
+# board: [ "nice_nano//zmk" ]
 # shield: [ "corne_left", "corne_right" ]
 # include:
-#   - board: bdn9_rev2
-#   - board: nice_nano_v2
+#   - board: bdn9//zmk
+#   - board: nice_nano//zmk
 #     shield: reviung41
-#   - board: nice_nano_v2
+#   - board: nice_nano//zmk
 #     shield: corne_left
 #     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
 #     artifact-name: corne_left_with_logging
 #
 ---
 include:
-  - board: nice_nano_v2
+  # Central/left half. nice_nano//zmk is the current ID for the old
+  # nice_nano_v2 board (default revision 2.0.0 + ZMK board variant).
+  # ZMK Studio: snippet enables the USB RPC transport, cmake-args turns on
+  # ZMK_STUDIO. Only the central half gets Studio support.
+  - board: nice_nano//zmk
     shield: lily58_left
-  - board: nice_nano_v2
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: nice_nano//zmk
     shield: lily58_right
 
